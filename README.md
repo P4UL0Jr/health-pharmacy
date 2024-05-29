@@ -1,8 +1,11 @@
-<h1 align="center"> 
+ <div align="center">
+    <img src="images/logo.png" width="300" height="300">
+   <h1 align="center"> 
   
   `Health-Pharmacy`
 
 </h1>
+</div>
 
 </br>
 
@@ -52,6 +55,26 @@ git clone https://github.com/brunoliratm/health-pharmacy.git
 
   ![Project3](images/diagramaDeClasse.png)
 </details>
+</br>
+
+## :nerd_face: Project Update
+
+:white_check_mark: Completed
+- [x] Project initialization
+- [x] Migration to Maven build system
+- [x] Established database connection
+
+:hourglass_flowing_sand: In Progress
+- [ ] Implementation of all Java classes
+- [ ] Development of data processing logic
+- [ ] Carry out treatments
+- [ ] Updating UML diagrams
+      
+:spiral_notepad: To Do
+- [ ] Creation of web interface
+      
+:floppy_disk:***Last Updated: May 27, 2024***
+
 </br>
 
 ## :zombie:Credits
