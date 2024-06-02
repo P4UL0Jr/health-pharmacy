@@ -1,12 +1,15 @@
 package Entidade;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Funcionario extends Pessoa{
+    @Column(length = 50)
     private String cargo;
     @Id
+    @Column(length = 11)
     private String CPF;
 
     public Funcionario(){
@@ -36,7 +39,7 @@ public class Funcionario extends Pessoa{
 
     @Override
     public String toString() {
-        return "Nome: \" + getNome() + Cargo: " + getCargo() + "\nCPF: " + getCPF() + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nSenha: " + getSenha()+ "\n";
+        return "Nome: " + getNome() + "\nCargo: " + getCargo() + "\nCPF: " + getCPF() + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nSenha: " + getSenha()+ "\n";
     }
 
     

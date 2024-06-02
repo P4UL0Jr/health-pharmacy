@@ -1,18 +1,20 @@
 package Entidade;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Pessoa {
     @Id
+    @Column(length = 11)
     private String CPF;
+    @Column(length = 100)
     private String nome;
+    @Column(length = 11)
     private String telefone;
+    @Column(length = 100)
     private String email;
+    @Column(length = 100)
     private String senha;
 
     public Pessoa(){

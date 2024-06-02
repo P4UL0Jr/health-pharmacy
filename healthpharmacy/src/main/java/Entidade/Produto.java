@@ -1,23 +1,25 @@
 package Entidade;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Produto {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private String id;
+    private Long id;
+    @Column(length = 100)
     private String nome;
+    @Column(length = 20)
     private float preco;
+    @Column(length = 20)
     private int quantidade;
+    @Column(length = 100)
     private String marca;
+    @Column(length = 20)
     private String tarja;
 
 
-    public Produto(String id, String nome, float preco, int quantidade, String marca, String tarja) {
+    public Produto(Long id, String nome, float preco, int quantidade, String marca, String tarja) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
@@ -26,10 +28,14 @@ public class Produto {
         this.tarja = tarja;
     }
 
-    public String getId() {
+    public Produto() {
+
+    }
+
+    public Long getId() {
         return id;
     }
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

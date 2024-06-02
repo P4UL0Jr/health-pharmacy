@@ -22,9 +22,9 @@ public class VerClientes {
             TypedQuery<Cliente> query = em.createQuery("SELECT c FROM Cliente c", Cliente.class);
             List<Cliente> clientes = query.getResultList();
             if (clientes.isEmpty()) {
-                System.out.println("Não há clientes cadastrados.");
+                System.out.println("Nao ha clientes cadastrados.");
             } else {
-                System.out.println("\nLista de Clientes:");
+                System.out.println("Lista de Clientes:");
                 for (Cliente cliente : clientes) {
                     System.out.println(cliente);
                 }
@@ -33,7 +33,7 @@ public class VerClientes {
             em.close();
             emf.close();
         }
-        System.out.println("Pressione enter para retornar ao menu de administração.");
+        System.out.println("Pressione enter para retornar ao menu de administracao.");
         sc.nextLine();
         MenuAdm.menuADM();
     }

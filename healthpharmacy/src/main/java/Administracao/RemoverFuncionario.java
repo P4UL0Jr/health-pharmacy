@@ -26,7 +26,6 @@ public class RemoverFuncionario {
       Thread.sleep(2000);
       MenuAdm.menuADM();
     } else {
-      sc.nextLine();
       System.out.println("Funcionário não encontrado!");
       Thread.sleep(2000);
       MenuAdm.menuADM();

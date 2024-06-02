@@ -33,6 +33,9 @@ Welcome to the Health-pharmacy project! This project aims to provide a comprehen
 
 ```shell
 git clone https://github.com/brunoliratm/health-pharmacy.git
+cd .\health-pharmacy\healthpharmacy\
+mvn compile exec:java
+
 ```
 
 </br>

@@ -4,20 +4,21 @@ import java.util.Scanner;
 
 import GUI.MenuEntrada;
 import Tratamento.Limpeza;
+import Tratamento.tratamento;
 
 public class MenuAdm {
     public static void menuADM() throws InterruptedException{
         Limpeza.limpeza();
         Scanner sc = new Scanner(System.in);
-        System.out.println("Menu de Administração\n");
+        System.out.println("Menu de Administracao\n");
         Thread.sleep(1500);
-        System.out.println("Digite o número da opção desejada:\n");
-        System.out.println("[1] Adicionar Funcionário");
-        System.out.println("[2] Remover Funcionário");
+        System.out.println("Digite o numero da opcao desejada:\n");
+        System.out.println("[1] Adicionar Funcionario");
+        System.out.println("[2] Remover Funcionario");
         System.out.println("[3] Remover Cliente");
-        System.out.println("[4] Histórico de vendas");
+        System.out.println("[4] Informacao da Farmacia");
         System.out.println("[5] Ver clientes cadastrados");
-        System.out.println("[6] Ver funcionários cadastrados");
+        System.out.println("[6] Ver funcionarios cadastrados");
         System.out.println("[7] Retornar ao menu de login");
         System.out.println("[8] Sair do aplicativo\n");
         System.out.print("--> ");
@@ -36,7 +37,7 @@ public class MenuAdm {
                 System.out.println();
                 break;
             case "4":
-                //HistoricoVendas.historicoVendas();
+                InformacaoFarmacia.informacaoFarmacia();
                 break;
             case "5":
                 VerClientes.verClientes();
@@ -48,14 +49,13 @@ public class MenuAdm {
                 MenuEntrada.menu();
                 break;
             case "8":
-            System.out.println("Obrigado pela confiança, volte sempre!");
+            System.out.println("Obrigado pela confianca, volte sempre!");
                 Thread.sleep(2000);
                 System.exit(0);
                 sc.close();
                 break;
             default:
-                sc.nextLine();
-                System.out.println("Opção inválida!");
+                tratamento.opcaoInvalida();
                 Thread.sleep(2000);
                 menuADM();
                 break;

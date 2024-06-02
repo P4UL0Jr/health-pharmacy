@@ -20,7 +20,6 @@ public class CadastroCliente {
 
         System.out.println("Cadastro de Cliente:\n");
 
-        // Obter e validar CPF
         System.out.print("CPF: ");
         String CPF = sc.nextLine().replaceAll("[^0-9]", "");
         if (CPF.length() != 11) {
@@ -43,28 +42,43 @@ public class CadastroCliente {
 
         System.out.print("Nome: ");
         String nome = sc.nextLine();
-        System.out.print("Endereço: ");
+        System.out.print("Endereco: ");
         String endereco = sc.nextLine();
         System.out.print("Idade: ");
-        String idade = sc.nextLine();
-        idade = idade.replaceAll("[^0-9]", "");
-        if (Integer.parseInt(idade) < 18) {
-            System.out.println("Você deve ter mais de 18 anos para se cadastrar");
-            Thread.sleep(2000);
-            em.close();
-            emf.close();
-            MenuEntrada.menuRegistro();
+        int idade;
+        while (true) {
+            System.out.print("Idade: ");
+            try {
+                idade = Integer.parseInt(sc.nextLine().replaceAll("[^0-9]", ""));
+                if (idade < 18) {
+                    throw new IllegalArgumentException("Voce deve ter mais de 18 anos para se cadastrar.");
+                }
+                break;
+            } catch (NumberFormatException e) {
+                tratamento.valorInvalido();
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
         }
-        int Idade = Integer.parseInt(idade);
 
-        System.out.print("Telefone (ex: 99999 9999):  ");
-        String telefone = sc.nextLine().replaceAll("[^0-9]", "");
+        String telefone;
+        while (true) {
+            System.out.print("Telefone (ex: (81)99999 9999): ");
+            telefone = sc.nextLine().replaceAll("[^0-9]", "");
+
+            if (telefone.length() == 11) {
+                telefone = telefone.substring(0, 5) + " " + telefone.substring(5);
+                break;
+            } else {
+                System.out.println("Telefone invalido. Digite 11 dígitos.");
+            }
+        }
         System.out.print("Email: ");
         String email = sc.nextLine();
         System.out.print("Senha: ");
         String senha = sc.nextLine();
 
-        Cliente cliente = new Cliente(nome, email, Idade, endereco, telefone, senha, CPF);
+        Cliente cliente = new Cliente(nome, email, idade, endereco, telefone, senha, CPF);
         em.getTransaction().begin();
         em.persist(cliente);
         em.getTransaction().commit();

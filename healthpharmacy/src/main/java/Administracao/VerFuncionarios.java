@@ -11,7 +11,7 @@ import Entidade.Funcionario;
 public class VerFuncionarios {
     public static void verFuncionarios() throws InterruptedException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Lista de Funcionários cadastrados\n");
+        System.out.println("Lista de Funcionarios cadastrados\n");
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa");
         EntityManager em = emf.createEntityManager();
 
@@ -20,9 +20,9 @@ public class VerFuncionarios {
             List<Funcionario> funcionarios = query.getResultList();
 
             if (funcionarios.isEmpty()) {
-                System.out.println("Não há funcionários cadastrados.");
+                System.out.println("Nao ha funcionarios cadastrados.");
             } else {
-                System.out.println("\nLista de Funcionários:");
+                System.out.println("Lista de Funcionarios:");
                 for (Funcionario funcionario : funcionarios) {
                     System.out.println(funcionario);
                 }
@@ -31,7 +31,7 @@ public class VerFuncionarios {
             em.close();
             emf.close();
         }
-        System.out.println("Pressione enter para retornar ao menu de administração.");
+        System.out.println("Pressione enter para retornar ao menu de administracao.");
         sc.nextLine();
         MenuAdm.menuADM();
     }
