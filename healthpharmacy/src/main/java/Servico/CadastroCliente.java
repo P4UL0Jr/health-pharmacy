@@ -63,14 +63,13 @@ public class CadastroCliente {
 
         String telefone;
         while (true) {
-            System.out.print("Telefone (ex: (81)99999 9999): ");
+            System.out.print("Telefone (ex: 8199999 9999): ");
             telefone = sc.nextLine().replaceAll("[^0-9]", "");
 
-            if (telefone.length() == 11) {
-                telefone = telefone.substring(0, 5) + " " + telefone.substring(5);
-                break;
+            if (telefone.length() != 11) {
+                System.out.println("Telefone invalido. o telefone deve conter 11 dígitos.");
             } else {
-                System.out.println("Telefone invalido. Digite 11 dígitos.");
+                break;
             }
         }
         System.out.print("Email: ");

@@ -5,7 +5,6 @@ import java.util.Scanner;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 import Administracao.MenuAdm;
 import Servico.CadastroCliente;
 import Servico.LoginCliente;
