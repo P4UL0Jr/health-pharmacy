@@ -44,22 +44,21 @@ public class CadastroCliente {
         String nome = sc.nextLine();
         System.out.print("Endereco: ");
         String endereco = sc.nextLine();
-        System.out.print("Idade: ");
-        int idade;
-        while (true) {
+        int idade = 0;
             System.out.print("Idade: ");
             try {
                 idade = Integer.parseInt(sc.nextLine().replaceAll("[^0-9]", ""));
                 if (idade < 18) {
                     throw new IllegalArgumentException("Voce deve ter mais de 18 anos para se cadastrar.");
                 }
-                break;
             } catch (NumberFormatException e) {
                 tratamento.valorInvalido();
+                MenuEntrada.menuRegistro();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
+                Thread.sleep(2000);
+                MenuEntrada.menuRegistro();
             }
-        }
 
         String telefone;
         while (true) {

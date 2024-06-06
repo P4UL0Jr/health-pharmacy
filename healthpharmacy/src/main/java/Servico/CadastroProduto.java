@@ -72,7 +72,7 @@ public class CadastroProduto {
 
         String tarja = tarja();
 
-        Produto produto = new Produto(id, nome, preco, quantidade, marca, tarja);
+        Produto produto = new Produto(nome, preco, quantidade, marca, tarja);
 
         try {
             em.getTransaction().begin();

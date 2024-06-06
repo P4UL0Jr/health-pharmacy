@@ -38,7 +38,7 @@ public class MenuEntrada {
                 menuLogin();
                 break;
             case "3":
-                MenuAdm.menuADM();
+                LoginAdm();
                 break;
             case "4":
                 System.out.println("Obrigado pela confianca, volte sempre!");
@@ -47,7 +47,8 @@ public class MenuEntrada {
                 System.exit(0);
             default:
                 tratamento.opcaoInvalida();
-                menu();
+
+            menu();
         }
     }
 
@@ -107,6 +108,28 @@ public class MenuEntrada {
                 menuRegistro();
                 break;
         }
+    }
+
+    //login adm
+    public static void LoginAdm() throws InterruptedException {
+        Scanner sc = new Scanner(System.in);
+        Limpeza.limpeza();
+        System.out.println("Entrar como ADM\n");
+        System.out.print("login: ");
+        String login = sc.nextLine();
+        System.out.print("Senha: ");
+        String senha = sc.nextLine();
+        Limpeza.limpeza();
+
+        if(login.equals("admin") && senha.equals("admin")){
+            System.out.println("Entrando como ADM...\n");
+            Thread.sleep(2000);
+            MenuAdm.menuADM();
+        } else{
+            tratamento.opcaoInvalida();
+            menuLogin();
+        }
+
     }
 
     // Start no APP

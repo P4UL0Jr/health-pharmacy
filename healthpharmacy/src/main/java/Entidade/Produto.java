@@ -19,8 +19,7 @@ public class Produto {
     private String tarja;
 
 
-    public Produto(Long id, String nome, float preco, int quantidade, String marca, String tarja) {
-        this.id = id;
+    public Produto(String nome, float preco, int quantidade, String marca, String tarja) {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;

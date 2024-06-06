@@ -42,5 +42,8 @@ public class RemoverProduto {
             sc.nextLine();
             MenuProdutos.menuProdutos(funcionario);
         }
+        System.out.println("Pressione Enter para continuar...");
+        sc.nextLine();
+        MenuProdutos.menuProdutos(funcionario);
     }
 }

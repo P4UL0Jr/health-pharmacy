@@ -9,9 +9,12 @@ public class ItemPedido {
   private Long id;
 
   @ManyToOne
-
   @JoinColumn(name = "produto_id")
   private Produto produto;
+
+  @ManyToOne
+  @JoinColumn(name = "pedido_id")
+  private PedidoFinalizado pedido;
 
   private int quantidade;
   private double preco;
@@ -38,6 +41,9 @@ public class ItemPedido {
     return produto;
   }
 
+  public PedidoFinalizado getPedido() {
+    return pedido;
+  }
   public void setProduto(Produto produto) {
     this.produto = produto;
   }

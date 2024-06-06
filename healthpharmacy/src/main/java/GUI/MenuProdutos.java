@@ -51,7 +51,6 @@ public class MenuProdutos {
           System.exit(0);
           break;
         default:
-          sc.nextLine();
           tratamento.opcaoInvalida();
           menuProdutos(funcionario);
       }
