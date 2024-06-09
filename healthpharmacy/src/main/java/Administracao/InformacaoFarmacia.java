@@ -22,7 +22,7 @@ public class InformacaoFarmacia {
           "SELECT COALESCE(SUM(i.quantidade), 0) FROM PedidoFinalizado p JOIN p.itens i", Long.class);
       totalProdutosVendidos = queryTotalProdutosVendidos.getSingleResult();
 
-      TypedQuery<Double> queryLucroTotal = em.createQuery("SELECT COALESCE(SUM(p.valorTotal), 0) - COALESCE(SUM((SELECT SUM(i.produto.preco * i.quantidade) FROM p.itens i)), 0) FROM PedidoFinalizado p",Double.class);
+      TypedQuery<Double> queryLucroTotal = em.createQuery("SELECT COALESCE(SUM((SELECT SUM(i.produto.preco * i.quantidade) FROM p.itens i)), 0) FROM PedidoFinalizado p",Double.class);
       lucroTotal = queryLucroTotal.getSingleResult();
 
       System.out.println("\nDados da Farmacia\n");

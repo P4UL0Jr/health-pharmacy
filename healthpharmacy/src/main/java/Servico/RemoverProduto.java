@@ -17,7 +17,8 @@ public class RemoverProduto {
         System.out.println("Remoçao de produto\n");
         System.out.print("Digite o ID do produto que deseja remover: \n");
         System.out.print("--> ");
-        String id = sc.nextLine();
+        long id = sc.nextLong();
+        sc.nextLine();
 
         try {
             Produto produto = em.find(Produto.class, id);
@@ -38,9 +39,7 @@ public class RemoverProduto {
         } finally {
             em.close();
             emf.close();
-            System.out.println("Pressione Enter para continuar...");
-            sc.nextLine();
-            MenuProdutos.menuProdutos(funcionario);
+
         }
         System.out.println("Pressione Enter para continuar...");
         sc.nextLine();

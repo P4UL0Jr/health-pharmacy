@@ -28,7 +28,7 @@ public class ExibirHistoricoCompras {
       for (PedidoFinalizado pedido : pedidos) {
         System.out.println("\n------------------------");
         System.out.println("Pedido #" + pedido.getId());
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"); // Define o formato desejado
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         String dataFormatada = pedido.getDataHora().format(formatter);
         System.out.println("Data: " + dataFormatada);
         System.out.println("Valor Total: R$ " + String.format("%.2f", pedido.getValorTotal()));

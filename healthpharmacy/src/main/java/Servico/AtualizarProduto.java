@@ -18,7 +18,7 @@ public class AtualizarProduto {
 
         System.out.println("Atualizacao de produto:\n");
         System.out.print("Digite o ID do produto que deseja atualizar: ");
-        String id = sc.nextLine();
+        long id = sc.nextLong();
         Produto produto = em.find(Produto.class, id);
 
         if (produto == null) {
@@ -33,6 +33,7 @@ public class AtualizarProduto {
         System.out.println("Dados atuais do produto:");
         System.out.println(produto);
 
+        sc.nextLine();
         System.out.print("\nNovo nome (ou pressione Enter para manter o atual): ");
         String novoNome = sc.nextLine();
         if (!novoNome.isEmpty()) {

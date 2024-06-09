@@ -54,7 +54,7 @@ public class ComprarProduto {
                     System.out.println("Quantidade invalida ou insuficiente no estoque.");
                 }
             } else {
-                System.out.println("Produto nao encontrado.");
+                System.out.println("Produto não encontrado no sistema");
             }
         } catch (NumberFormatException e) {
             System.out.println("ID do produto ou quantidade invalidos.");

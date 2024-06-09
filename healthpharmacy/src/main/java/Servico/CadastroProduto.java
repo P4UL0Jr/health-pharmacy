@@ -21,18 +21,6 @@ public class CadastroProduto {
         System.out.println("Cadastrar novo Produto: \n");
         Thread.sleep(1000);
 
-        System.out.print("ID do produto: ");
-        Long id = sc.nextLong();
-
-        Produto produtoExistente = em.find(Produto.class, id);
-        if (produtoExistente != null) {
-            System.out.println("Ja existe um produto com esse ID!");
-            Thread.sleep(2000);
-            em.close();
-            emf.close();
-            MenuProdutos.menuProdutos(funcionario);
-            return;
-        }
         System.out.print("Nome do produto: ");
         String nome = sc.nextLine();
 
